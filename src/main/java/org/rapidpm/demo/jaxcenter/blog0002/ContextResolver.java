@@ -24,8 +24,5 @@ import javax.enterprise.util.AnnotationLiteral;
  * Time: 16:20
  */
 public interface ContextResolver {
-
     public AnnotationLiteral resolveContext(final Class<?> targetClass);
-
-
 }
