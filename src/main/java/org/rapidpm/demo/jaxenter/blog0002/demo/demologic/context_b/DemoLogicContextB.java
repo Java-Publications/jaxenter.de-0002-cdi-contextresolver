@@ -14,24 +14,24 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002.demo.demologic;
+package org.rapidpm.demo.jaxenter.blog0002.demo.demologic.context_b;
 
-import javax.inject.Singleton;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+import javax.inject.Qualifier;
 
 /**
  * User: Sven Ruppert
  * Date: 16.10.13
- * Time: 17:49
+ * Time: 17:23
  */
 
-@Singleton
-public class DemoContext {
 
-    public boolean toggle = false;
-
-    public boolean getContextInfo(){
-        //example simple logic from system state ;-)
-        return toggle;
-    }
-
+@Qualifier
+@Retention(value = RetentionPolicy.RUNTIME)
+@Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.TYPE})
+public @interface DemoLogicContextB {
 }

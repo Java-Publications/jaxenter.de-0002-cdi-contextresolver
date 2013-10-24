@@ -14,14 +14,20 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002.demo;
+package org.rapidpm.demo.jaxenter.blog0002.demo.demologic.context_a;
+
+
+import org.rapidpm.demo.jaxenter.blog0002.demo.DemoLogic;
 
 /**
  * User: Sven Ruppert
  * Date: 16.10.13
- * Time: 17:20
+ * Time: 17:27
  */
-public interface DemoLogic {
+public class DemoLogicA implements DemoLogic {
 
-    public String doIt();
+
+    @Override public String doIt() {
+        return System.nanoTime()+"-A";
+    }
 }

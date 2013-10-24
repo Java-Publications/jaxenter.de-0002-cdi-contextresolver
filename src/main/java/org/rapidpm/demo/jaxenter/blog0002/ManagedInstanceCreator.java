@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002;
+package org.rapidpm.demo.jaxenter.blog0002;
 
 import java.lang.reflect.Type;
 import java.util.Set;

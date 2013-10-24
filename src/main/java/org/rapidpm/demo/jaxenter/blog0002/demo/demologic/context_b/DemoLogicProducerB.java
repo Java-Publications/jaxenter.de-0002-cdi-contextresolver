@@ -14,24 +14,26 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002.demo.demologic;
+package org.rapidpm.demo.jaxenter.blog0002.demo.demologic.context_b;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import javax.enterprise.inject.New;
+import javax.enterprise.inject.Produces;
+import javax.enterprise.inject.spi.BeanManager;
+import javax.enterprise.inject.spi.InjectionPoint;
 
-import javax.inject.Qualifier;
+import org.rapidpm.demo.jaxenter.blog0002.demo.DemoLogic;
+
 
 /**
  * User: Sven Ruppert
  * Date: 16.10.13
- * Time: 17:23
+ * Time: 17:21
  */
+public class DemoLogicProducerB {
 
+    @Produces @DemoLogicContextB
+    public DemoLogic create(BeanManager beanManager, InjectionPoint injectionPoint, @New DemoLogicB demoLogicB) {
+        return demoLogicB;
+    }
 
-@Qualifier
-@Retention(value = RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.TYPE})
-public @interface DemoLogicContext {
 }

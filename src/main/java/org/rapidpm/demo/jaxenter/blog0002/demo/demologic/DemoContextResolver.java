@@ -14,14 +14,14 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002.demo.demologic;
+package org.rapidpm.demo.jaxenter.blog0002.demo.demologic;
 
 import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Inject;
 
-import org.rapidpm.demo.jaxcenter.blog0002.ContextResolver;
-import org.rapidpm.demo.jaxcenter.blog0002.demo.demologic.context_a.DemoLogicContextA;
-import org.rapidpm.demo.jaxcenter.blog0002.demo.demologic.context_b.DemoLogicContextB;
+import org.rapidpm.demo.jaxenter.blog0002.ContextResolver;
+import org.rapidpm.demo.jaxenter.blog0002.demo.demologic.context_a.DemoLogicContextA;
+import org.rapidpm.demo.jaxenter.blog0002.demo.demologic.context_b.DemoLogicContextB;
 
 /**
  * User: Sven Ruppert

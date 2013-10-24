@@ -14,20 +14,15 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002.demo.demologic.context_b;
+package org.rapidpm.demo.jaxenter.blog0002;
 
-
-import org.rapidpm.demo.jaxcenter.blog0002.demo.DemoLogic;
+import javax.enterprise.util.AnnotationLiteral;
 
 /**
  * User: Sven Ruppert
- * Date: 16.10.13
- * Time: 17:27
+ * Date: 26.06.13
+ * Time: 16:20
  */
-public class DemoLogicB implements DemoLogic {
-
-
-    @Override public String doIt() {
-        return System.nanoTime()+"-B";
-    }
+public interface ContextResolver {
+    public AnnotationLiteral resolveContext(final Class<?> targetClass);
 }

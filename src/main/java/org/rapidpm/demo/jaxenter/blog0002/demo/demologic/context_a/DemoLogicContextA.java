@@ -14,20 +14,24 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002.demo.demologic.context_a;
+package org.rapidpm.demo.jaxenter.blog0002.demo.demologic.context_a;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-import org.rapidpm.demo.jaxcenter.blog0002.demo.DemoLogic;
+import javax.inject.Qualifier;
 
 /**
  * User: Sven Ruppert
  * Date: 16.10.13
- * Time: 17:27
+ * Time: 17:23
  */
-public class DemoLogicA implements DemoLogic {
 
 
-    @Override public String doIt() {
-        return System.nanoTime()+"-A";
-    }
+@Qualifier
+@Retention(value = RetentionPolicy.RUNTIME)
+@Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.TYPE})
+public @interface DemoLogicContextA {
 }
