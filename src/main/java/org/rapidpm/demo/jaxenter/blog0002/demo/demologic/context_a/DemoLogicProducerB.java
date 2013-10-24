@@ -14,20 +14,26 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002.demo.demologic.context_a;
+package org.rapidpm.demo.jaxenter.blog0002.demo.demologic.context_a;
 
+import javax.enterprise.inject.New;
+import javax.enterprise.inject.Produces;
+import javax.enterprise.inject.spi.BeanManager;
+import javax.enterprise.inject.spi.InjectionPoint;
 
-import org.rapidpm.demo.jaxcenter.blog0002.demo.DemoLogic;
+import org.rapidpm.demo.jaxenter.blog0002.demo.DemoLogic;
+
 
 /**
  * User: Sven Ruppert
  * Date: 16.10.13
- * Time: 17:27
+ * Time: 17:21
  */
-public class DemoLogicA implements DemoLogic {
+public class DemoLogicProducerB {
 
-
-    @Override public String doIt() {
-        return System.nanoTime()+"-A";
+    @Produces @DemoLogicContextA
+    public DemoLogic create(BeanManager beanManager, InjectionPoint injectionPoint, @New DemoLogicA demoLogicA) {
+        return demoLogicA;
     }
+
 }

@@ -14,24 +14,20 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002.demo.demologic.context_b;
+package org.rapidpm.demo.jaxenter.blog0002.demo.demologic.context_b;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
 
-import javax.inject.Qualifier;
+import org.rapidpm.demo.jaxenter.blog0002.demo.DemoLogic;
 
 /**
  * User: Sven Ruppert
  * Date: 16.10.13
- * Time: 17:23
+ * Time: 17:27
  */
+public class DemoLogicB implements DemoLogic {
 
 
-@Qualifier
-@Retention(value = RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.TYPE})
-public @interface DemoLogicContextB {
+    @Override public String doIt() {
+        return System.nanoTime()+"-B";
+    }
 }

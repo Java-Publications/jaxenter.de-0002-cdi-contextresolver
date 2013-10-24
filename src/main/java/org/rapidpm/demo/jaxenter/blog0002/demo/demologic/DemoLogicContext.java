@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002.demo.demologic.context_a;
+package org.rapidpm.demo.jaxenter.blog0002.demo.demologic;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -33,5 +33,5 @@ import javax.inject.Qualifier;
 @Qualifier
 @Retention(value = RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.TYPE})
-public @interface DemoLogicContextA {
+public @interface DemoLogicContext {
 }

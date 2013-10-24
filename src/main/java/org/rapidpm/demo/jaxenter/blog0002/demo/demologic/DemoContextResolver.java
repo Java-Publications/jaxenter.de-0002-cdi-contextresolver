@@ -14,18 +14,30 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002;
+package org.rapidpm.demo.jaxenter.blog0002.demo.demologic;
 
 import javax.enterprise.util.AnnotationLiteral;
+import javax.inject.Inject;
+
+import org.rapidpm.demo.jaxenter.blog0002.ContextResolver;
+import org.rapidpm.demo.jaxenter.blog0002.demo.demologic.context_a.DemoLogicContextA;
+import org.rapidpm.demo.jaxenter.blog0002.demo.demologic.context_b.DemoLogicContextB;
 
 /**
  * User: Sven Ruppert
- * Date: 26.06.13
- * Time: 16:20
+ * Date: 16.10.13
+ * Time: 17:22
  */
-public interface ContextResolver {
+public class DemoContextResolver implements ContextResolver {
 
-    public AnnotationLiteral resolveContext(final Class<?> targetClass);
+    @Inject DemoContext demoContext;
 
+    @Override public AnnotationLiteral resolveContext(Class<?> targetClass) {
 
+        if(demoContext.getContextInfo()){
+            return new AnnotationLiteral<DemoLogicContextA>() {};
+        } else{
+            return new AnnotationLiteral<DemoLogicContextB>() {};
+        }
+    }
 }

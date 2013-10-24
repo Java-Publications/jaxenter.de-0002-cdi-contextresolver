@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002;
+package org.rapidpm.demo.jaxenter.blog0002;
 
 import java.lang.reflect.Type;
 import java.util.HashSet;
@@ -37,7 +37,7 @@ public class DefaultContextResolver implements ContextResolver {
     @Inject BeanManager beanManager;
 
 
-    public Set<ContextResolver> gettAllContextResolver(){
+    public Set<ContextResolver> getAllContextResolver(){
         final Set<ContextResolver> resultSet = new HashSet<>();
         final Set<Bean<?>> allBeans = beanManager.getBeans(ContextResolver.class, new AnnotationLiteral<Any>() {});
         for (final Bean<?> bean : allBeans) {
@@ -57,9 +57,7 @@ public class DefaultContextResolver implements ContextResolver {
 
     @Override
     public AnnotationLiteral resolveContext(Class<?> targetClass) {
-
-        final Set<ContextResolver> contextResolvers = gettAllContextResolver();
-
+        final Set<ContextResolver> contextResolvers = getAllContextResolver();
         for (final ContextResolver contextResolver : contextResolvers) {
             final AnnotationLiteral annotationLiteral = contextResolver.resolveContext(targetClass);
             if(annotationLiteral == null){
@@ -68,8 +66,6 @@ public class DefaultContextResolver implements ContextResolver {
                 return annotationLiteral;
             }
         }
-
-
 
         return new AnnotationLiteral<Blog0002>() {
         };  //as Default Implementation

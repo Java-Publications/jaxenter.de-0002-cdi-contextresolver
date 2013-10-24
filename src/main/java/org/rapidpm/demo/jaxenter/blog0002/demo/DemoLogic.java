@@ -14,26 +14,14 @@
  *    limitations under the License.
  */
 
-package org.rapidpm.demo.jaxcenter.blog0002.demo.demologic.context_b;
-
-import javax.enterprise.inject.New;
-import javax.enterprise.inject.Produces;
-import javax.enterprise.inject.spi.BeanManager;
-import javax.enterprise.inject.spi.InjectionPoint;
-
-import org.rapidpm.demo.jaxcenter.blog0002.demo.DemoLogic;
-
+package org.rapidpm.demo.jaxenter.blog0002.demo;
 
 /**
  * User: Sven Ruppert
  * Date: 16.10.13
- * Time: 17:21
+ * Time: 17:20
  */
-public class DemoLogicProducerB {
+public interface DemoLogic {
 
-    @Produces @DemoLogicContextB
-    public DemoLogic create(BeanManager beanManager, InjectionPoint injectionPoint, @New DemoLogicB demoLogicB) {
-        return demoLogicB;
-    }
-
+    public String doIt();
 }

@@ -1,4 +1,4 @@
-package junit.org.rapidpm.demo.jaxcenter.blog0002;
+package junit.org.rapidpm.demo.jaxenter.blog0002;
 
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
@@ -11,9 +11,9 @@ import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.rapidpm.demo.jaxcenter.blog0002.demo.DemoLogic;
-import org.rapidpm.demo.jaxcenter.blog0002.demo.demologic.DemoContext;
-import org.rapidpm.demo.jaxcenter.blog0002.demo.demologic.DemoLogicContext;
+import org.rapidpm.demo.jaxenter.blog0002.demo.DemoLogic;
+import org.rapidpm.demo.jaxenter.blog0002.demo.demologic.DemoContext;
+import org.rapidpm.demo.jaxenter.blog0002.demo.demologic.DemoLogicContext;
 
 /**
  * User: Sven Ruppert
@@ -26,8 +26,8 @@ public class ContextResolverTest {
     @Deployment
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
-                .addPackages(true, "org.rapidpm.demo.jaxcenter")
-                .addPackages(true, "junit.org.rapidpm.demo.jaxcenter")
+                .addPackages(true, "org.rapidpm.demo.jaxenter")
+                .addPackages(true, "junit.org.rapidpm.demo.jaxenter")
                 .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
     }
 
