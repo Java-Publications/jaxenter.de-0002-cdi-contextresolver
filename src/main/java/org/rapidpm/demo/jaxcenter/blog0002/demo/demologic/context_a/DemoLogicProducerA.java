@@ -29,7 +29,7 @@ import org.rapidpm.demo.jaxcenter.blog0002.demo.DemoLogic;
  * Date: 16.10.13
  * Time: 17:21
  */
-public class DemoLogicProducerB {
+public class DemoLogicProducerA {
 
     @Produces @DemoLogicContextA
     public DemoLogic create(BeanManager beanManager, InjectionPoint injectionPoint, @New DemoLogicA demoLogicA) {
